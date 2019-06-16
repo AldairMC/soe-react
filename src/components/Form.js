@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
     
@@ -30,7 +31,7 @@ class Form extends Component {
             category: this.categoryRef.current.value
         }
 
-        console.log(data)
+        this.props.getEvent(data)
     }
     
     render() {
@@ -61,6 +62,11 @@ class Form extends Component {
             </form>
         );
     }
+}
+
+Form.propTypes = {
+    getCategory: PropTypes.array.isRequired,
+    getEvent: PropTypes.func.isRequired
 }
 
 export default Form;

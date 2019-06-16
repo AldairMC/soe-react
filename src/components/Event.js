@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Event = (props) => {
     
@@ -6,7 +7,6 @@ const Event = (props) => {
 
     let desc = description.text.substring(0,100)
     
-     
     return (
         <div>
             <div className="uk-card uk-card-default">
@@ -30,5 +30,13 @@ const Event = (props) => {
         </div>
     );
 };
+
+Event.propTypes = {
+    info: PropTypes.shape({
+        name: PropTypes.shape({
+            text: PropTypes.string
+        })
+    })
+}
 
 export default Event;
